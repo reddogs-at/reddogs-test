@@ -9,7 +9,7 @@ after_script:
   - php vendor/bin/coveralls -v
 
 before_install:
-  - composer require phpunit/phpunit:4.8.* satooshi/php-coveralls:dev-master
+  - composer require phpunit/phpunit satooshi/php-coveralls:dev-master
   - composer install --dev
 before_script:
   - composer install
