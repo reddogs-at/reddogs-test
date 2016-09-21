@@ -1,5 +1,4 @@
 <?php
-
 namespace Reddogs\Test;
 
 use Interop\Container\ContainerInterface;
@@ -9,6 +8,7 @@ use Zend\ServiceManager\Config;
 
 abstract class ContainerAwareTestCase extends \PHPUnit_Framework_TestCase
 {
+
     /**
      * Container
      *
@@ -25,14 +25,16 @@ abstract class ContainerAwareTestCase extends \PHPUnit_Framework_TestCase
 
     /**
      * Config manager
-     * {@inheritDoc}
+     *
+     * {@inheritdoc}
+     *
      * @see PHPUnit_Framework_TestCase::setUp()
      */
     protected function setUp()
     {
         parent::setUp();
 
-        $config =  new \ArrayObject($this->getConfigManager()->getMergedConfig());
+        $config = new \ArrayObject($this->getConfigManager()->getMergedConfig());
         $container = new ServiceManager();
         (new Config($config['dependencies']))->configureServiceManager($container);
 
@@ -90,5 +92,4 @@ abstract class ContainerAwareTestCase extends \PHPUnit_Framework_TestCase
     {
         return $this->getContainer()->get('config');
     }
-
 }
