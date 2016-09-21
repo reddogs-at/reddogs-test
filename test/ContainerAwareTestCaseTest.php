@@ -1,5 +1,4 @@
 <?php
-
 namespace ReddogsTest\Test;
 
 use Interop\Container\ContainerInterface;
@@ -10,11 +9,14 @@ use Zend\ServiceManager\ServiceManager;
 
 class ContainerAwareTestCaseTest extends ContainerAwareTestCase
 {
+
     private $testConfigManager;
 
     protected function setUp()
     {
-        $this->testConfigManager = new ConfigManager([TestModule::class]);
+        $this->testConfigManager = new ConfigManager([
+            TestModule::class
+        ]);
         $this->setConfigManager($this->testConfigManager);
         parent::setUp();
     }
