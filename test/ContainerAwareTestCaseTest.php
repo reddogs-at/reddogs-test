@@ -7,6 +7,8 @@ use Zend\Expressive\ConfigManager\ConfigManager;
 use ReddogsTest\Test\_files\TestModule;
 use Zend\ServiceManager\ServiceManager;
 
+require_once __DIR__ . '/_files/TestModule.php';
+
 class ContainerAwareTestCaseTest extends ContainerAwareTestCase
 {
 
