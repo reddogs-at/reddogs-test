@@ -7,7 +7,11 @@ class TestModule
     public function __invoke()
     {
         return [
-            'dependencies' => [],
+            'dependencies' => [
+                'invokables' => [
+                    'TestArrayObject' => \ArrayObject::class
+                ]
+            ],
         ];
     }
 }

@@ -1,4 +1,10 @@
 <?php
+/**
+ * Reddogs (https://github.com/reddogs-at)
+ *
+ * @see https://github.com/reddogs-at/reddogs-test for the canonical source repository
+ * @license https://github.com/reddogs-at/reddogs-test/blob/master/LICENSE MIT License
+ */
 namespace Reddogs\Test;
 
 use Interop\Container\ContainerInterface;
@@ -6,9 +12,13 @@ use Zend\Expressive\ConfigManager\ConfigManager;
 use Zend\ServiceManager\ServiceManager;
 use Zend\ServiceManager\Config;
 
+/**
+ * Container aware testcase
+ *
+ * @deprecated
+ */
 abstract class ContainerAwareTestCase extends \PHPUnit_Framework_TestCase
 {
-
     /**
      * Container
      *

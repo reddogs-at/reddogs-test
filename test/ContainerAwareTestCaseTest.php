@@ -11,7 +11,6 @@ require_once __DIR__ . '/_files/TestModule.php';
 
 class ContainerAwareTestCaseTest extends ContainerAwareTestCase
 {
-
     private $testConfigManager;
 
     protected function setUp()
@@ -50,7 +49,11 @@ class ContainerAwareTestCaseTest extends ContainerAwareTestCase
     public function testGetConfig()
     {
         $expected = new \ArrayObject([
-            'dependencies' => []
+            'dependencies' => [
+                'invokables' => [
+                    'TestArrayObject' => \ArrayObject::class
+                ]
+            ],
         ]);
         $this->assertEquals($expected, $this->getConfig());
     }
