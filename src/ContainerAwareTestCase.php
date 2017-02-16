@@ -11,13 +11,14 @@ use Interop\Container\ContainerInterface;
 use Zend\Expressive\ConfigManager\ConfigManager;
 use Zend\ServiceManager\ServiceManager;
 use Zend\ServiceManager\Config;
+use PHPUnit\Framework\TestCase;
 
 /**
  * Container aware testcase
  *
  * @deprecated
  */
-abstract class ContainerAwareTestCase extends \PHPUnit_Framework_TestCase
+abstract class ContainerAwareTestCase extends TestCase
 {
     /**
      * Container

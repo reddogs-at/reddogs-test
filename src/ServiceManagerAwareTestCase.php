@@ -8,8 +8,9 @@ use Interop\Container\ContainerInterface;
 use Zend\Expressive\ConfigManager\ConfigManager;
 use Zend\ServiceManager\Config;
 use Zend\ServiceManager\ServiceManager;
+use PHPUnit\Framework\TestCase;
 
-abstract class ServiceManagerAwareTestCase extends \PHPUnit_Framework_TestCase
+abstract class ServiceManagerAwareTestCase extends TestCase
 {
     /**
      * Array
