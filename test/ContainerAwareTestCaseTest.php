@@ -3,9 +3,9 @@ namespace ReddogsTest\Test;
 
 use Interop\Container\ContainerInterface;
 use Reddogs\Test\ContainerAwareTestCase;
-use Zend\Expressive\ConfigManager\ConfigManager;
 use ReddogsTest\Test\_files\TestModule;
 use Zend\ServiceManager\ServiceManager;
+use Zend\ConfigAggregator\ConfigAggregator;
 
 require_once __DIR__ . '/_files/TestModule.php';
 
@@ -15,7 +15,7 @@ class ContainerAwareTestCaseTest extends ContainerAwareTestCase
 
     protected function setUp()
     {
-        $this->testConfigManager = new ConfigManager([
+        $this->testConfigManager = new ConfigAggregator([
             TestModule::class
         ]);
         $this->setConfigManager($this->testConfigManager);
@@ -29,7 +29,7 @@ class ContainerAwareTestCaseTest extends ContainerAwareTestCase
 
     public function testSetConfigManager()
     {
-        $configManager = new ConfigManager([]);
+        $configManager = new ConfigAggregator([]);
         $this->setConfigManager($configManager);
         $this->assertSame($configManager, $this->getConfigManager());
     }

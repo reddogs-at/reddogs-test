@@ -5,10 +5,10 @@ declare(strict_types=1);
 namespace Reddogs\Test;
 
 use Interop\Container\ContainerInterface;
-use Zend\Expressive\ConfigManager\ConfigManager;
 use Zend\ServiceManager\Config;
 use Zend\ServiceManager\ServiceManager;
 use PHPUnit\Framework\TestCase;
+use Zend\ConfigAggregator\ConfigAggregator;
 
 abstract class ServiceManagerAwareTestCase extends TestCase
 {
@@ -36,7 +36,7 @@ abstract class ServiceManagerAwareTestCase extends TestCase
         $container = new ServiceManager();
         $this->setContainer($container);
 
-        $configManager = new ConfigManager($this->getConfigProviders());
+        $configManager = new ConfigAggregator($this->getConfigProviders());
         $config = new \ArrayObject($configManager->getMergedConfig());
         if (isset($config['dependencies'])) {
             (new Config($config['dependencies']))->configureServiceManager($container);

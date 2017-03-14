@@ -8,10 +8,10 @@
 namespace Reddogs\Test;
 
 use Interop\Container\ContainerInterface;
-use Zend\Expressive\ConfigManager\ConfigManager;
 use Zend\ServiceManager\ServiceManager;
 use Zend\ServiceManager\Config;
 use PHPUnit\Framework\TestCase;
+use Zend\ConfigAggregator\ConfigAggregator;
 
 /**
  * Container aware testcase
@@ -77,7 +77,7 @@ abstract class ContainerAwareTestCase extends TestCase
     /**
      * Get config manager
      *
-     * @return ConfigManager
+     * @return ConfigAggregator
      */
     public function getConfigManager()
     {
@@ -89,7 +89,7 @@ abstract class ContainerAwareTestCase extends TestCase
      *
      * @param ConfigManager $configManager
      */
-    public function setConfigManager(ConfigManager $configManager)
+    public function setConfigManager(ConfigAggregator $configManager)
     {
         $this->configManager = $configManager;
     }
